@@ -1,12 +1,12 @@
 package org.example;
 
-public class Informacoes {
+public class Informacao {
 
     private ItemTarefa dados;
 
     public String getDados() {
         if (this.dados == null) {
-            throw new NullPointerException("Informacoes sem dados");
+            throw new NullPointerException("Informacao sem dados");
         }
         return this.dados.getConteudo();
     }

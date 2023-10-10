@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InformacoesTest {
+class InformacaoTest {
 
     @Test
     void deveRetornarUrgenciaTarefa() {
@@ -19,24 +19,24 @@ class InformacoesTest {
         projetoSecundario.addItem(tarefa03);
         projetoPrincipal.addItem(projetoSecundario);
 
-        Informacoes informacoes = new Informacoes();
-        informacoes.setDados(projetoPrincipal);
+        Informacao informacao = new Informacao();
+        informacao.setDados(projetoPrincipal);
 
         assertEquals("Projeto: Projeto 01\n" +
                 "Tarefa: Tarefa 01 - Descrição: Descrição da Tarefa 01\n" +
                 "Projeto: Projeto 02\n" +
                 "Tarefa: Tarefa 02 - Descrição: Descrição da Tarefa 02\n" +
-                "Tarefa: Tarefa 03 - Descrição: Descrição da Tarefa 03\n", informacoes.getDados());
+                "Tarefa: Tarefa 03 - Descrição: Descrição da Tarefa 03\n", informacao.getDados());
     }
 
     @Test
-    void deveRetornarExecacaoPrioridadeSemUrgencia() {
+    void deveRetornarExecacaoInformacaoSemDados() {
         try {
-            Informacoes informacoes = new Informacoes();
-            informacoes.getDados();
+            Informacao informacao = new Informacao();
+            informacao.getDados();
             fail();
         } catch (NullPointerException e) {
-            assertEquals("Informacoes sem dados", e.getMessage());
+            assertEquals("Informacao sem dados", e.getMessage());
         }
     }
 }
